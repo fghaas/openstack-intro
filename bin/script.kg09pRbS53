@@ -1,0 +1,519 @@
+Script started on Thu 13 Nov 2014 08:39:07 AM CET
+florian@roller:~/git/openstack-intro/bin$ [20P(reverse-i-search)`':[Cs': history -ws': ssh -L 8080:alice:70 ubuntu@212.8.214.190[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@h[C[C[C[17@florian@roller:~/git/openstack-intro/bin$[C
+Welcome to Ubuntu 14.04.1 LTS (GNU/Linux 3.13.0-36-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Thu Nov 13 07:30:42 UTC 2014
+
+  System load:  0.0                Processes:           89
+  Usage of /:   16.1% of 19.65GB   Users logged in:     1
+  Memory usage: 6%                 IP address for eth0: 192.168.122.100
+  Swap usage:   0%                 IP address for eth1: 192.168.133.100
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+38 packages can be updated.
+21 updates are security updates.
+
+
+Last login: Thu Nov 13 07:30:43 2014 from 212095007085.public.telering.at
+ubuntu@deploy:~$ clear
+[H[Jubuntu@deploy:~$ 
+ubuntu@deploy:~$ 
+ubuntu@deploy:~$ ssh alice
+Welcome to Ubuntu 14.04.1 LTS (GNU/Linux 3.13.0-36-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Thu Nov 13 07:03:56 UTC 2014
+
+  System load:  0.12              Users logged in:     1
+  Usage of /:   7.6% of 19.65GB   IP address for eth0: 192.168.122.111
+  Memory usage: 83%               IP address for eth1: 192.168.133.111
+  Swap usage:   0%                IP address for eth2: 192.168.144.111
+  Processes:    164
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+36 packages can be updated.
+20 updates are security updates.
+
+
+Last login: Thu Nov 13 07:03:56 2014 from deploy.example.com
+ubuntu@alice:~$ . openstackrc 
+ubuntu@alice:~$ clear
+[H[Jubuntu@alice:~$ nova list
++--------------------------------------+-------+--------+------------+-------------+--------------------+
+| ID                                   | Name  | Status | Task State | Power State | Networks           |
++--------------------------------------+-------+--------+------------+-------------+--------------------+
+| 15cf5e15-30e2-4315-88af-a19b2fc4ca22 | test1 | ACTIVE | -          | Running     | admin-net=10.5.5.6 |
+| 36e2d825-2fe9-4000-a564-3ce8ab485850 | test2 | ACTIVE | -          | Running     | admin-net=10.5.5.7 |
++--------------------------------------+-------+--------+------------+-------------+--------------------+
+ubuntu@alice:~$ galnce [K[K[K[K[K[Klance image-list
++--------------------------------------+--------+-------------+------------------+----------+--------+
+| ID                                   | Name   | Disk Format | Container Format | Size     | Status |
++--------------------------------------+--------+-------------+------------------+----------+--------+
+| 7b707425-ca2a-4f1b-b144-15400e0ddb7f | cirros | qcow2       | ovf              | 13200896 | active |
++--------------------------------------+--------+-------------+------------------+----------+--------+
+ubuntu@alice:~$ no[K[Kglance help image-create
+usage: glance image-create [--id <IMAGE_ID>] [--name <NAME>] [--store <STORE>]
+                           [--disk-format <DISK_FORMAT>]
+                           [--container-format <CONTAINER_FORMAT>]
+                           [--owner <TENANT_ID>] [--size <SIZE>]
+                           [--min-disk <DISK_GB>] [--min-ram <DISK_RAM>]
+                           [--location <IMAGE_URL>] [--file <FILE>]
+                           [--checksum <CHECKSUM>] [--copy-from <IMAGE_URL>]
+                           [--is-public {True,False}]
+                           [--is-protected {True,False}]
+                           [--property <key=value>] [--human-readable]
+                           [--progress]
+
+Create a new image.
+
+Optional arguments:
+  --id <IMAGE_ID>       ID of image to reserve.
+  --name <NAME>         Name of image.
+  --store <STORE>       Store to upload image to.
+  --disk-format <DISK_FORMAT>
+                        Disk format of image. Acceptable formats: ami, ari,
+                        aki, vhd, vmdk, raw, qcow2, vdi, and iso.
+  --container-format <CONTAINER_FORMAT>
+                        Container format of image. Acceptable formats: ami,
+                        ari, aki, bare, and ovf.
+  --owner <TENANT_ID>   Tenant who should own image.
+  --size <SIZE>         Size of image data (in bytes). Only used with '--
+                        location' and '--copy_from'.
+  --min-disk <DISK_GB>  Minimum size of disk needed to boot image (in
+                        gigabytes).
+  --min-ram <DISK_RAM>  Minimum amount of ram needed to boot image (in
+                        megabytes).
+  --location <IMAGE_URL>
+                        URL where the data for this image already resides. For
+                        example, if the image data is stored in swift, you
+                        could specify 'swift+http://tenant%3Aaccount:key@auth_
+                        url/v2.0/container/obj'. (Note: '%3A' is ':' URL
+                        encoded.)
+  --file <FILE>         Local file that contains disk image to be uploaded
+                        during creation. Alternatively, images can be passed
+                        to the client via stdin.
+  --checksum <CHECKSUM>
+                        Hash of image data used Glance can use for
+                        verification. Provide a md5 checksum here.
+  --copy-from <IMAGE_URL>
+                        Similar to '--location' in usage, but this indicates
+                        that the Glance server should immediately copy the
+                        data and store it in its configured image store.
+  --is-public {True,False}
+                        Make image accessible to the public.
+  --is-protected {True,False}
+                        Prevent image from being deleted.
+  --property <key=value>
+                        Arbitrary property to associate with image. May be
+                        used multiple times.
+  --human-readable      Print image size in a human-friendly format.
+  --progress            Show upload progress bar.
+ubuntu@alice:~$ clear
+[H[Jubuntu@alice:~$ logout
+Connection to alice closed.
+ubuntu@deploy:~$ cat ubu[K[K[Kopenstackrc [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kls -la
+total 72
+drwxr-xr-x 7 ubuntu ubuntu 4096 Nov 13 07:39 [0m[01;34m.[0m
+drwxr-xr-x 4 root   root   4096 Nov 11 09:43 [01;34m..[0m
+-rw------- 1 ubuntu ubuntu  128 Nov 13 07:39 .Xauthority
+drwxrwxr-x 3 ubuntu ubuntu 4096 Nov 10 22:50 [01;34m.ansible[0m
+-rw------- 1 ubuntu ubuntu 7738 Nov 13 07:06 .bash_history
+-rw-r--r-- 1 ubuntu ubuntu  220 Apr  9  2014 .bash_logout
+-rw-r--r-- 1 ubuntu ubuntu 3637 Apr  9  2014 .bashrc
+drwx------ 2 ubuntu ubuntu 4096 Nov 10 22:31 [01;34m.cache[0m
+-rw-rw-r-- 1 ubuntu ubuntu    0 Nov 11 07:14 .cloud-locale-test.skip
+drwx------ 3 ubuntu ubuntu 4096 Nov 10 22:56 [01;34m.config[0m
+drwxrwxr-x 5 ubuntu ubuntu 4096 Nov 13 08:21 [01;34m.juju[0m
+-rw-r--r-- 1 ubuntu ubuntu    1 Nov 11 00:16 .juju-proxy
+-rw-r--r-- 1 ubuntu ubuntu  744 Nov 10 22:59 .profile
+-rw-rw-r-- 1 ubuntu ubuntu  504 Nov 10 22:52 .screenrc
+drwx------ 2 ubuntu ubuntu 4096 Nov 11 00:16 [01;34m.ssh[0m
+-rw------- 1 root   root    722 Nov 11 11:36 .viminfo
+-rwxr-xr-x 1 ubuntu ubuntu 2173 Nov 10 23:10 [01;32mdeploy-openstack.sh[0m
+-rw------- 1 ubuntu ubuntu  135 Nov 10 22:53 openstackrc
+ubuntu@deploy:~$ cat deploy-openstack.sh 
+#!/bin/sh
+
+set -x
+
+CONFIG=~/.juju/openstack-config.yaml
+
+juju_add() {
+  fqdn="$1.`hostname -d`"
+  semaphore=~/.juju/hosts/$fqdn
+  if [ -e $semaphore ]; then
+      echo "Skipping $fqdn because $semaphore exists"
+  else
+      juju add-machine ssh:$fqdn && touch $semaphore || exit 1
+  fi
+}
+
+juju_add alice
+juju deploy rabbitmq-server --to=1
+
+juju_add bob
+juju deploy mysql --to=2
+
+juju deploy --config $CONFIG keystone --to=1
+juju add-relation keystone mysql
+
+juju deploy --config $CONFIG glance --to=1
+juju add-relation glance mysql
+juju add-relation glance keystone
+
+juju deploy --config $CONFIG neutron-api --to=1
+juju add-relation neutron-api mysql
+juju add-relation neutron-api rabbitmq-server
+juju add-relation neutron-api keystone
+
+juju deploy --config $CONFIG nova-cloud-controller --to=1
+juju add-relation nova-cloud-controller mysql
+juju add-relation nova-cloud-controller rabbitmq-server
+juju add-relation nova-cloud-controller glance
+juju add-relation nova-cloud-controller keystone
+juju add-relation nova-cloud-controller neutron-api
+
+juju deploy --config $CONFIG nova-compute --to=2
+juju add-relation nova-compute mysql
+juju add-relation nova-compute rabbitmq-server
+juju add-relation nova-compute glance
+juju add-relation nova-compute nova-cloud-controller
+
+juju deploy --config $CONFIG neutron-openvswitch
+juju add-relation neutron-openvswitch nova-compute
+juju add-relation neutron-openvswitch neutron-api
+juju add-relation neutron-openvswitch rabbitmq-server
+
+juju_add charlie
+juju deploy --config $CONFIG quantum-gateway --to=3
+juju add-relation quantum-gateway mysql
+juju add-relation quantum-gateway:amqp rabbitmq-server:amqp
+juju add-relation quantum-gateway nova-cloud-controller
+juju add-relation quantum-gateway neutron-api
+
+juju deploy --config $CONFIG cinder --to=1
+juju add-relation cinder keystone
+juju add-relation cinder mysql
+juju add-relation cinder rabbitmq-server
+juju add-relation cinder nova-cloud-controller
+
+juju deploy --config $CONFIG openstack-dashboard --to=1
+juju add-relation openstack-dashboard keystone
+
+juju deploy heat --to=1
+juju add-relation heat keystone
+juju add-relation heat mysql
+juju add-relation heat rabbitmq-server
+ubuntu@deploy:~$ cat deploy-openstack.sh [C[1P[1P[1P[1@v[1@i[1@e[1@w[C[1@ 
+[?1049h[?1h=[1;38r[34l[34h[?25h[23m[24m[0m[H[J[?25l[38;1H"deploy-openstack.sh" [readonly] 72L, 2173C[1;1H[34m#!/bin/sh[0m
+
+[33mset[0m[36m [0m[35m-x[0m
+
+[36mCONFIG[0m=~/.juju/openstack-config.yaml
+
+[36mjuju_add() {
+[0m  [36mfqdn[0m=[33m"[0m[35m$1.`hostname -d`[0m[33m"[0m
+  [36msemaphore[0m=~/.juju/hosts/[35m$fqdn[0m
+  [33mif [[0m [33m-e[0m [35m$semaphore[0m [33m][0m; [33mthen[11;7Hecho[0m[31m [0m[33m"[0m[31mSkipping [0m[35m$fqdn[0m[31m because [0m[35m$semaphore[0m[31m exists[0m[33m"
+[0m  [33melse[0m[13;7Hjuju add-machine ssh:[35m$fqdn[0m && [33mtouch[0m [35m$semaphore[0m || [33mexit[0m [31m1[0m
+  [33mfi[0m
+[36m}[0m
+
+juju_add alice
+juju deploy rabbitmq-server [35m--to=1[0m
+
+juju_add bob
+juju deploy mysql [35m--to=2[0m
+
+juju deploy [35m--config[0m [35m$CONFIG[0m keystone [35m--to=1[0m
+juju add-relation keystone mysql
+
+juju deploy [35m--config[0m [35m$CONFIG[0m glance [35m--to=1[0m
+juju add-relation glance mysql
+juju add-relation glance keystone
+
+juju deploy [35m--config[0m [35m$CONFIG[0m neutron-api [35m--to=1[0m
+juju add-relation neutron-api mysql
+juju add-relation neutron-api rabbitmq-server
+juju add-relation neutron-api keystone
+
+juju deploy [35m--config[0m [35m$CONFIG[0m nova-cloud-controller [35m--to=1[0m
+juju add-relation nova-cloud-controller mysql
+juju add-relation nova-cloud-controller rabbitmq-server[38;128H1,1[11CTop[1;1H[34h[?25h[?25l[38;128H2,0-1[2;1H[34h[?25h[?25l[38;128H3,1  [3;1H[34h[?25h[?25l[38;128H4,0-1[4;1H[34h[?25h[?25l[38;128H5,1  [5;1H[34h[?25h[?25l[38;128H6,0-1[6;1H[34h[?25h[?25l[38;128H7,1  [7;1H[34h[?25h[?25l[38;128H8[8;1H[34h[?25h[?25l[38;128H9[9;1H[34h[?25h[?25l[38;128H10,1[10;1H[34h[?25h[?25l[38;129H1[11;1H[34h[?25h[?25l[38;129H2[12;1H[34h[?25h[?25l[38;129H3[13;1H[34h[?25h[?25l[38;129H4[14;1H[34h[?25h[?25l[7;12H[36m[46m{[15;1H}[0m[38;129H5[15;1H[34h[?25h[?25l[7;12H[36m{[15;1H}[0m[38;129H6,0-1[16;1H[34h[?25h[?25l[38;129H7,1  [17;1H[34h[?25h[?25l[38;129H8[18;1H[34h[?25h[?25l[38;129H9,0-1[19;1H[34h[?25h[?25l[38;128H20,1  [20;1H[34h[?25h[?25l[38;129H1[21;1H[34h[?25h[?25l[38;129H2,0-1[22;1H[34h[?25h[?25l[38;129H3,1  [23;1H[34h[?25h[?25l[38;129H4[24;1H[34h[?25h[?25l[38;129H5,0-1[25;1H[34h[?25h[?25l[38;129H6,1  [26;1H[34h[?25h[?25l[38;129H7[27;1H[34h[?25h[?25l[38;129H8[28;1H[34h[?25h[?25l[38;129H9,0-1[29;1H[34h[?25h[?25l[38;128H30,1  [30;1H[34h[?25h[?25l[38;129H1[31;1H[34h[?25h[?25l[38;129H2[32;1H[34h[?25h[?25l[38;129H3[33;1H[34h[?25h[?25l[38;129H4,0-1[34;1H[34h[?25h[?25l[38;129H5,1  [35;1H[34h[?25h[?25l[38;129H6[36;1H[34h[?25h[?25l[38;129H7[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hjuju add-relation nova-cloud-controller glance[38;1H[K[38;128H38,1[11C2%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hjuju add-relation nova-cloud-controller keystone[38;128H[K[38;128H39,1[11C5%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hjuju add-relation nova-cloud-controller neutron-api[38;128H[K[38;128H40,1[11C8%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[38;128H[K[38;128H41,0-1[8C11%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hjuju deploy [35m--config[0m [35m$CONFIG[0m nova-compute [35m--to=2[0m[38;128H[K[38;128H42,1[10C14%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hjuju add-relation nova-compute mysql[38;128H[K[38;128H43,1[10C17%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hjuju add-relation nova-compute rabbitmq-server[38;128H[K[38;128H44,1[10C20%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hjuju add-relation nova-compute glance[38;128H[K[38;128H45,1[10C22%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hjuju add-relation nova-compute nova-cloud-controller[38;128H[K[38;128H46,1[10C25%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[38;128H[K[38;128H47,0-1[8C28%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hjuju deploy [35m--config[0m [35m$CONFIG[0m neutron-openvswitch[38;128H[K[38;128H48,1[10C31%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hjuju add-relation neutron-openvswitch nova-compute[38;128H[K[38;128H49,1[10C34%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hjuju add-relation neutron-openvswitch neutron-api[38;128H[K[38;128H50,1[10C37%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hjuju add-relation neutron-openvswitch rabbitmq-server[38;128H[K[38;128H51,1[10C40%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[38;128H[K[38;128H52,0-1[8C42%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hjuju_add charlie[38;128H[K[38;128H53,1[10C45%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hjuju deploy [35m--config[0m [35m$CONFIG[0m quantum-gateway [35m--to=3[0m[38;128H[K[38;128H54,1[10C48%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hjuju add-relation quantum-gateway mysql[38;128H[K[38;128H55,1[10C51%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hjuju add-relation quantum-gateway:amqp rabbitmq-server:amqp[38;128H[K[38;128H56,1[10C54%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hjuju add-relation quantum-gateway nova-cloud-controller[38;128H[K[38;128H57,1[10C57%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hjuju add-relation quantum-gateway neutron-api[38;128H[K[38;128H58,1[10C60%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[38;128H[K[38;128H59,0-1[8C62%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hjuju deploy [35m--config[0m [35m$CONFIG[0m cinder [35m--to=1[0m[38;128H[K[38;128H60,1[10C65%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hjuju add-relation cinder keystone[38;128H[K[38;128H61,1[10C68%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hjuju add-relation cinder mysql[38;128H[K[38;128H62,1[10C71%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hjuju add-relation cinder rabbitmq-server[38;128H[K[38;128H63,1[10C74%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hjuju add-relation cinder nova-cloud-controller[38;128H[K[38;128H64,1[10C77%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[38;128H[K[38;128H65,0-1[8C80%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hjuju deploy [35m--config[0m [35m$CONFIG[0m openstack-dashboard [35m--to=1[0m[38;128H[K[38;128H66,1[10C82%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hjuju add-relation openstack-dashboard keystone[38;128H[K[38;128H67,1[10C85%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[38;128H[K[38;128H68,0-1[8C88%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hjuju deploy heat [35m--to=1[0m[38;128H[K[38;128H69,1[10C91%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hjuju add-relation heat keystone[38;128H[K[38;128H70,1[10C94%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hjuju add-relation heat mysql[38;128H[K[38;128H71,1[10C97%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hjuju add-relation heat rabbitmq-server[38;128H[K[38;128H72,1[10CBot[37;1H[34h[?25h[?25l[38;129H1[36;1H[34h[?25h[?25l[38;129H0[35;1H[34h[?25h[?25l[38;128H69[34;1H[34h[?25h[?25l[38;129H8,0-1[33;1H[34h[?25h[?25l[38;129H7,1  [32;1H[34h[?25h[?25l[38;129H6[31;1H[34h[?25h[?25l[38;129H5,0-1[30;1H[34h[?25h[?25l[38;129H4,1  [29;1H[34h[?25h[?25l[38;129H3[28;1H[34h[?25h[?25l[38;129H2[27;1H[34h[?25h[?25l[38;129H1[26;1H[34h[?25h[?25l[38;129H0[25;1H[34h[?25h[?25l[38;128H59,0-1[24;1H[34h[?25h[?25l[38;129H8,1  [23;1H[34h[?25h[?25l[38;129H7[22;1H[34h[?25h[?25l[38;129H6[21;1H[34h[?25h[?25l[38;129H5[20;1H[34h[?25h[?25l[38;129H4[19;1H[34h[?25h[?25l[38;129H3[18;1H[34h[?25h[?25l[38;129H2,0-1[17;1H[34h[?25h[?25l[38;129H1,1  [16;1H[34h[?25h[?25l[38;129H0[15;1H[34h[?25h[?25l[38;128H49[14;1H[34h[?25h[?25l[38;129H8[13;1H[34h[?25h[?25l[38;129H7,0-1[12;1H[34h[?25h[?25l[38;129H6,1  [11;1H[34h[?25h[?25l[38;129H5[10;1H[34h[?25h[?25l[38;129H4[9;1H[34h[?25h[?25l[38;129H3[8;1H[34h[?25h[?25l[38;129H2[7;1H[34h[?25h[?25l[38;129H1,0-1[6;1H[34h[?25h[?25l[38;129H0,1  [5;1H[34h[?25h[?25l[38;128H39[4;1H[34h[?25h[?25l[38;129H8[3;1H[34h[?25h[?25l[38;129H7[2;1H[34h[?25h[?25l[38;129H6[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1Hjuju deploy [35m--config[0m [35m$CONFIG[0m nova-cloud-controller [35m--to=1[0m[38;128H[K[38;128H35,1[10C97%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[38;128H[K[38;128H34,0-1[8C94%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1Hjuju add-relation neutron-api keystone[38;128H[K[38;128H33,1[10C91%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1Hjuju add-relation neutron-api rabbitmq-server[38;128H[K[38;128H32,1[10C88%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1Hjuju add-relation neutron-api mysql[38;128H[K[38;128H31,1[10C85%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1Hjuju deploy [35m--config[0m [35m$CONFIG[0m neutron-api [35m--to=1[0m[38;128H[K[38;128H30,1[10C82%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[38;128H[K[38;128H29,0-1[8C80%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1Hjuju add-relation glance keystone[38;128H[K[38;128H28,1[10C77%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1Hjuju add-relation glance mysql[38;128H[K[38;128H27,1[10C74%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1Hjuju deploy [35m--config[0m [35m$CONFIG[0m glance [35m--to=1[0m[38;128H[K[38;128H26,1[10C71%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[38;128H[K[38;128H25,0-1[8C68%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1Hjuju add-relation keystone mysql[38;128H[K[38;128H24,1[10C65%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1Hjuju deploy [35m--config[0m [35m$CONFIG[0m keystone [35m--to=1[0m[38;128H[K[38;128H23,1[10C62%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[38;128H[K[38;128H22,0-1[8C60%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1Hjuju deploy mysql [35m--to=2[0m[38;128H[K[38;128H21,1[10C57%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1Hjuju_add bob[38;128H[K[38;128H20,1[10C54%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[38;128H[K[38;128H19,0-1[8C51%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1Hjuju deploy rabbitmq-server [35m--to=1[0m[38;128H[K[38;128H18,1[10C48%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1Hjuju_add alice[38;128H[K[38;128H17,1[10C45%[1;1H[34h[?25h[?25l[38;129H8[2;1H[34h[?25h[?25l[38;129H9,0-1[3;1H[34h[?25h[?25l[38;128H20,1  [4;1H[34h[?25h[?25l[38;129H1[5;1H[34h[?25h[?25l[38;129H2,0-1[6;1H[34h[?25h[?25l[38;129H3,1  [7;1H[34h[?25h[?25l[38;129H4[8;1H[34h[?25h[?25l[38;129H5,0-1[9;1H[34h[?25h[?25l[38;129H6,1  [10;1H[34h[?25h[?25l[38;129H7[11;1H[34h[?25h[?25l[38;129H8[12;1H[34h[?25h[?25l[38;129H9,0-1[13;1H[34h[?25h[?25l[38;128H30,1  [14;1H[34h[?25h[?25l[38;129H1[15;1H[34h[?25h[?25l[38;129H2[16;1H[34h[?25h[?25l[38;129H3[17;1H[34h[?25h[?25l[38;129H4,0-1[18;1H[34h[?25h[?25l[38;129H5,1  [19;1H[34h[?25h[?25l[38;129H6[20;1H[34h[?25h[?25l[38;129H7[21;1H[34h[?25h[?25l[38;129H8[22;1H[34h[?25h[?25l[38;129H9[23;1H[34h[?25h[?25l[38;128H40[24;1H[34h[?25h[?25l[38;129H1,0-1[25;1H[34h[?25h[?25l[38;129H2,1  [26;1H[34h[?25h[?25l[38;129H3[27;1H[34h[?25h[?25l[38;129H4[28;1H[34h[?25h[?25l[38;129H5[29;1H[34h[?25h[?25l[38;129H6[30;1H[34h[?25h[?25l[38;129H7,0-1[31;1H[34h[?25h[?25l[38;129H8,1  [32;1H[34h[?25h[?25l[38;129H9[33;1H[34h[?25h[?25l[38;128H50[34;1H[34h[?25h[?25l[38;129H1[35;1H[34h[?25h[?25l[38;129H2,0-1[36;1H[34h[?25h[?25l[38;129H3,1  [37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hjuju deploy [35m--config[0m [35m$CONFIG[0m quantum-gateway [35m--to=3[0m[38;128H[K[38;128H54,1[10C48%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hjuju add-relation quantum-gateway mysql[38;128H[K[38;128H55,1[10C51%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hjuju add-relation quantum-gateway:amqp rabbitmq-server:amqp[38;128H[K[38;128H56,1[10C54%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hjuju add-relation quantum-gateway nova-cloud-controller[38;128H[K[38;128H57,1[10C57%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hjuju add-relation quantum-gateway neutron-api[38;128H[K[38;128H58,1[10C60%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[38;128H[K[38;128H59,0-1[8C62%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hjuju deploy [35m--config[0m [35m$CONFIG[0m cinder [35m--to=1[0m[38;128H[K[38;128H60,1[10C65%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hjuju add-relation cinder keystone[38;128H[K[38;128H61,1[10C68%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hjuju add-relation cinder mysql[38;128H[K[38;128H62,1[10C71%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hjuju add-relation cinder rabbitmq-server[38;128H[K[38;128H63,1[10C74%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hjuju add-relation cinder nova-cloud-controller[38;128H[K[38;128H64,1[10C77%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[38;128H[K[38;128H65,0-1[8C80%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hjuju deploy [35m--config[0m [35m$CONFIG[0m openstack-dashboard [35m--to=1[0m[38;128H[K[38;128H66,1[10C82%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hjuju add-relation openstack-dashboard keystone[38;128H[K[38;128H67,1[10C85%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[38;128H[K[38;128H68,0-1[8C88%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hjuju deploy heat [35m--to=1[0m[38;128H[K[38;128H69,1[10C91%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hjuju add-relation heat keystone[38;128H[K[38;128H70,1[10C94%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hjuju add-relation heat mysql[38;128H[K[38;128H71,1[10C97%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hjuju add-relation heat rabbitmq-server[38;128H[K[38;128H72,1[10CBot[37;1H[34h[?25h[?25l[38;129H1[36;1H[34h[?25h[?25l[38;129H0[35;1H[34h[?25h[?25l[38;128H69[34;1H[34h[?25h[?25l[38;129H8,0-1[33;1H[34h[?25h[?25l[38;129H7,1  [32;1H[34h[?25h[?25l[38;129H6[31;1H[34h[?25h[?25l[38;129H5,0-1[30;1H[34h[?25h[?25l[38;129H4,1  [29;1H[34h[?25h[?25l[38;129H3[28;1H[34h[?25h[?25l[38;129H2[27;1H[34h[?25h[?25l[38;129H1[26;1H[34h[?25h[?25l[38;129H0[25;1H[34h[?25h[?25l[38;128H59,0-1[24;1H[34h[?25h[?25l[38;129H8,1  [23;1H[34h[?25h[?25l[38;129H7[22;1H[34h[?25h[?25l[38;129H6[21;1H[34h[?25h[?25l[38;129H5[20;1H[34h[?25h[?25l[38;129H4[19;1H[34h[?25h[?25l[38;129H3[18;1H[34h[?25h[?25l[38;129H2,0-1[17;1H[34h[?25h[?25l[38;129H1,1  [16;1H[34h[?25h[?25l[38;129H0[15;1H[34h[?25h[?25l[38;128H49[14;1H[34h[?25h[?25l[38;129H8[13;1H[34h[?25h[?25l[38;129H7,0-1[12;1H[34h[?25h[?25l[38;129H6,1  [11;1H[34h[?25h[?25l[38;129H5[10;1H[34h[?25h[?25l[38;129H4[9;1H[34h[?25h[?25l[38;129H3[8;1H[34h[?25h[?25l[38;129H2[7;1H[34h[?25h[?25l[38;129H1,0-1[6;1H[34h[?25h[?25l[38;129H0,1  [5;1H[34h[?25h[?25l[38;128H39[4;1H[34h[?25h[?25l[38;129H8[3;1H[34h[?25h[?25l[38;129H7[2;1H[34h[?25h[?25l[38;129H6[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1Hjuju deploy [35m--config[0m [35m$CONFIG[0m nova-cloud-controller [35m--to=1[0m[38;128H[K[38;128H35,1[10C97%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[38;128H[K[38;128H34,0-1[8C94%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1Hjuju add-relation neutron-api keystone[38;128H[K[38;128H33,1[10C91%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1Hjuju add-relation neutron-api rabbitmq-server[38;128H[K[38;128H32,1[10C88%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1Hjuju add-relation neutron-api mysql[38;128H[K[38;128H31,1[10C85%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1Hjuju deploy [35m--config[0m [35m$CONFIG[0m neutron-api [35m--to=1[0m[38;128H[K[38;128H30,1[10C82%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[38;128H[K[38;128H29,0-1[8C80%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1Hjuju add-relation glance keystone[38;128H[K[38;128H28,1[10C77%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1Hjuju add-relation glance mysql[38;128H[K[38;128H27,1[10C74%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1Hjuju deploy [35m--config[0m [35m$CONFIG[0m glance [35m--to=1[0m[38;128H[K[38;128H26,1[10C71%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[38;128H[K[38;128H25,0-1[8C68%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1Hjuju add-relation keystone mysql[38;128H[K[38;128H24,1[10C65%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1Hjuju deploy [35m--config[0m [35m$CONFIG[0m keystone [35m--to=1[0m[38;128H[K[38;128H23,1[10C62%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[38;128H[K[38;128H22,0-1[8C60%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1Hjuju deploy mysql [35m--to=2[0m[38;128H[K[38;128H21,1[10C57%[1;1H[34h[?25h[?25l[38;129H2,0-1[2;1H[34h[?25h[?25l[38;129H3,1  [3;1H[34h[?25h[?25l[38;129H4[4;1H[34h[?25h[?25l[38;129H5,0-1[5;1H[34h[?25h[?25l[38;129H6,1  [6;1H[34h[?25h[?25l[38;128H[K[38;1H:[34h[?25hq[?25l[38;1H[K[38;1H[?1l>[34h[?25h[?1049lubuntu@deploy:~$ ssh alice
+Welcome to Ubuntu 14.04.1 LTS (GNU/Linux 3.13.0-36-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Thu Nov 13 09:12:09 UTC 2014
+
+  System load:  0.12              Users logged in:     0
+  Usage of /:   7.6% of 19.65GB   IP address for eth0: 192.168.122.111
+  Memory usage: 84%               IP address for eth1: 192.168.133.111
+  Swap usage:   0%                IP address for eth2: 192.168.144.111
+  Processes:    162
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+36 packages can be updated.
+20 updates are security updates.
+
+
+Last login: Thu Nov 13 09:12:09 2014 from deploy.example.com
+ubuntu@alice:~$ clear
+[H[Jubuntu@alice:~$ . ssh[K[K[Kopenstackrc 
+ubuntu@alice:~$ keyt[Kstone catalog
+Service: compute
++-------------+-----------------------------------------------------------------+
+|   Property  |                              Value                              |
++-------------+-----------------------------------------------------------------+
+|   adminURL  | http://192.168.122.111:8774/v2/1892732c889d48d381b779237dce319a |
+|      id     |                 766973cec0024b8ea35f59ea144f5d35                |
+| internalURL | http://192.168.133.111:8774/v2/1892732c889d48d381b779237dce319a |
+|  publicURL  | http://192.168.144.111:8774/v2/1892732c889d48d381b779237dce319a |
+|    region   |                            RegionOne                            |
++-------------+-----------------------------------------------------------------+
+Service: network
++-------------+----------------------------------+
+|   Property  |              Value               |
++-------------+----------------------------------+
+|   adminURL  |   http://192.168.122.111:9696    |
+|      id     | 32814cc6f9c14eeca9a064872b29b0b0 |
+| internalURL |   http://192.168.133.111:9696    |
+|  publicURL  |   http://192.168.144.111:9696    |
+|    region   |            RegionOne             |
++-------------+----------------------------------+
+Service: s3
++-------------+----------------------------------+
+|   Property  |              Value               |
++-------------+----------------------------------+
+|   adminURL  |   http://192.168.122.111:3333    |
+|      id     | 8b8adecb701548a79718545538ccc7de |
+| internalURL |   http://192.168.133.111:3333    |
+|  publicURL  |   http://192.168.144.111:3333    |
+|    region   |            RegionOne             |
++-------------+----------------------------------+
+Service: image
++-------------+----------------------------------+
+|   Property  |              Value               |
++-------------+----------------------------------+
+|   adminURL  |   http://192.168.122.111:9292    |
+|      id     | 65bce74f00844d9892bea91bfa8b1e56 |
+| internalURL |   http://192.168.133.111:9292    |
+|  publicURL  |   http://192.168.144.111:9292    |
+|    region   |            RegionOne             |
++-------------+----------------------------------+
+Service: cloudformation
++-------------+----------------------------------+
+|   Property  |              Value               |
++-------------+----------------------------------+
+|   adminURL  |  http://192.168.122.111:8000/v1  |
+|      id     | 4bfa4c12f7124c07a12cc1eabab2cf9a |
+| internalURL |  http://192.168.122.111:8000/v1  |
+|  publicURL  |  http://192.168.122.111:8000/v1  |
+|    region   |            RegionOne             |
++-------------+----------------------------------+
+Service: volume
++-------------+-----------------------------------------------------------------+
+|   Property  |                              Value                              |
++-------------+-----------------------------------------------------------------+
+|   adminURL  | http://192.168.122.111:8776/v1/1892732c889d48d381b779237dce319a |
+|      id     |                 03d42311bd784b08b0ed690d5e90f92b                |
+| internalURL | http://192.168.133.111:8776/v1/1892732c889d48d381b779237dce319a |
+|  publicURL  | http://192.168.144.111:8776/v1/1892732c889d48d381b779237dce319a |
+|    region   |                            RegionOne                            |
++-------------+-----------------------------------------------------------------+
+Service: ec2
++-------------+--------------------------------------------+
+|   Property  |                   Value                    |
++-------------+--------------------------------------------+
+|   adminURL  | http://192.168.122.111:8773/services/Cloud |
+|      id     |      418a5e34f33b44278c350e5aabb95e1a      |
+| internalURL | http://192.168.133.111:8773/services/Cloud |
+|  publicURL  | http://192.168.144.111:8773/services/Cloud |
+|    region   |                 RegionOne                  |
++-------------+--------------------------------------------+
+Service: orchestration
++-------------+-----------------------------------------------------------------+
+|   Property  |                              Value                              |
++-------------+-----------------------------------------------------------------+
+|   adminURL  | http://192.168.122.111:8004/v1/1892732c889d48d381b779237dce319a |
+|      id     |                 0bd2ff43cd314b7ea80daa0a777f4f90                |
+| internalURL | http://192.168.122.111:8004/v1/1892732c889d48d381b779237dce319a |
+|  publicURL  | http://192.168.122.111:8004/v1/1892732c889d48d381b779237dce319a |
+|    region   |                            RegionOne                            |
++-------------+-----------------------------------------------------------------+
+Service: identity
++-------------+-----------------------------------+
+|   Property  |               Value               |
++-------------+-----------------------------------+
+|   adminURL  | http://192.168.122.111:35357/v2.0 |
+|      id     |  5ef1594216bf4c598939ddeca96df9df |
+| internalURL |  http://192.168.133.111:5000/v2.0 |
+|  publicURL  |  http://192.168.144.111:5000/v2.0 |
+|    region   |             RegionOne             |
++-------------+-----------------------------------+
+ubuntu@alice:~$ ehco [K[K[K[K[Kclear
+[H[Jubuntu@alice:~$ echo $OS_Au[KUTH_URL 
+http://192.168.144.111:5000/v2.0/
+ubuntu@alice:~$ echo $OS_AUTH_URL [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cclear[Kkeystone catalog | less
+[?1049h[?1h=Service: compute
++-------------+-----------------------------------------------------------------+
+|   Property  |                              Value                              |
++-------------+-----------------------------------------------------------------+
+|   adminURL  | http://192.168.122.111:8774/v2/1892732c889d48d381b779237dce319a |
+|      id     |                 766973cec0024b8ea35f59ea144f5d35                |
+| internalURL | http://192.168.133.111:8774/v2/1892732c889d48d381b779237dce319a |
+|  publicURL  | http://192.168.144.111:8774/v2/1892732c889d48d381b779237dce319a |
+|    region   |                            RegionOne                            |
++-------------+-----------------------------------------------------------------+
+Service: network
++-------------+----------------------------------+
+|   Property  |              Value               |
++-------------+----------------------------------+
+|   adminURL  |   http://192.168.122.111:9696    |
+|      id     | 32814cc6f9c14eeca9a064872b29b0b0 |
+| internalURL |   http://192.168.133.111:9696    |
+|  publicURL  |   http://192.168.144.111:9696    |
+|    region   |            RegionOne             |
++-------------+----------------------------------+
+Service: s3
++-------------+----------------------------------+
+|   Property  |              Value               |
++-------------+----------------------------------+
+|   adminURL  |   http://192.168.122.111:3333    |
+|      id     | 8b8adecb701548a79718545538ccc7de |
+| internalURL |   http://192.168.133.111:3333    |
+|  publicURL  |   http://192.168.144.111:3333    |
+|    region   |            RegionOne             |
++-------------+----------------------------------+
+Service: image
++-------------+----------------------------------+
+|   Property  |              Value               |
++-------------+----------------------------------+
+|   adminURL  |   http://192.168.122.111:9292    |
+|      id     | 65bce74f00844d9892bea91bfa8b1e56 |
+| internalURL |   http://192.168.133.111:9292    |
+:[K[K:[K[K[?1l>[?1049lubuntu@alice:~$ clear
+[H[Jubuntu@alice:~$ neu[K[K[K. openstackrc 
+ubuntu@alice:~$ neutrn [K[Kon net-list
+unsupported locale setting
+ubuntu@alice:~$ export LC_ALL=C
+ubuntu@alice:~$ export LC_ALL=Cneutron net-list
++--------------------------------------+-----------+-------------------------------------------------------+
+| id                                   | name      | subnets                                               |
++--------------------------------------+-----------+-------------------------------------------------------+
+| be6c5e44-adfe-4bc8-9d98-716e74ba1d6c | admin-net | e55ef5c9-71e5-4ef2-9cd2-f6560f1bc60a 10.5.5.0/24      |
+| cf12ac0e-fe09-4a0d-977f-ef89802f7c7c | ext-net   | 7d822e2c-1981-4fd3-a909-f1ded4a7d217 192.168.144.0/24 |
++--------------------------------------+-----------+-------------------------------------------------------+
+ubuntu@alice:~$ cinder list
++----+--------+--------------+------+-------------+----------+-------------+
+| ID | Status | Display Name | Size | Volume Type | Bootable | Attached to |
++----+--------+--------------+------+-------------+----------+-------------+
++----+--------+--------------+------+-------------+----------+-------------+
+ubuntu@alice:~$ cinder create --display-name=testvol 1
++---------------------+--------------------------------------+
+|       Property      |                Value                 |
++---------------------+--------------------------------------+
+|     attachments     |                  []                  |
+|  availability_zone  |                 nova                 |
+|       bootable      |                false                 |
+|      created_at     |      2014-11-13T09:27:17.885213      |
+| display_description |                 None                 |
+|     display_name    |               testvol                |
+|      encrypted      |                False                 |
+|          id         | 08363aa8-29bf-4451-bb21-b386e609c651 |
+|       metadata      |                  {}                  |
+|         size        |                  1                   |
+|     snapshot_id     |                 None                 |
+|     source_volid    |                 None                 |
+|        status       |               creating               |
+|     volume_type     |                 None                 |
++---------------------+--------------------------------------+
+ubuntu@alice:~$ cinder list
++--------------------------------------+-----------+--------------+------+-------------+----------+-------------+
+|                  ID                  |   Status  | Display Name | Size | Volume Type | Bootable | Attached to |
++--------------------------------------+-----------+--------------+------+-------------+----------+-------------+
+| 08363aa8-29bf-4451-bb21-b386e609c651 | available |   testvol    |  1   |     None    |  false   |             |
++--------------------------------------+-----------+--------------+------+-------------+----------+-------------+
+ubuntu@alice:~$ sudo lbs  vs
+  LV                                          VG             Attr      LSize Pool Origin Data%  Move Log Copy%  Convert
+  volume-08363aa8-29bf-4451-bb21-b386e609c651 cinder-volumes -wi-a---- 1.00g                                           
+ubuntu@alice:~$ ~~^C
+ubuntu@alice:~$ logout
+Connection to alice closed.
+ubuntu@deploy:~$ logout
+Connection to 212.8.214.190 closed.
+florian@roller:~/git/openstack-intro/bin$ exit
+
+Script done on Thu 13 Nov 2014 10:34:07 AM CET

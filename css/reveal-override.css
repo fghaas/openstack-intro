@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url(//fonts.googleapis.com/css?family=Cabin:400,700);
 @import url(//fonts.googleapis.com/css?family=Special+Elite:400,700);
 @import url(//fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
@@ -90,6 +91,36 @@
   background: inherit !important;
   text-shadow: none;
   text-transform: none;
+}
+.reveal blockquote, .reveal q {
+  quotes: "“" "”" "‘" "’";
+}
+.reveal blockquote:before, .reveal q:before {
+  content: open-quote;
+}
+.reveal blockquote:after, .reveal q:after {
+  content: close-quote;
+}
+.reveal blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+}
+.reveal blockquote:before, .reveal blockquote:after {
+  color: #ccc;
+  font-size: 4em;
+  line-height: 0.1em;
+  vertical-align: -0.4em;
+}
+.reveal blockquote:before {
+  margin-right: 0.25em;
+}
+.reveal blockquote:after {
+  margin-left: 0.25em;
+}
+.reveal blockquote p {
+  display: inline;
 }
 .reveal .stamp {
   position: absolute;

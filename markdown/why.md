@@ -1,6 +1,5 @@
-<!-- .slide: data-background-image="images/openstack-logo.svg" data-background-size="contain" -->
 # Cloud computing with OpenStack
-## An introduction
+### An introduction
 Note: This presentation consists of two parts:
 - First, it deals with the question: What is Cloud Computing? Which
   challenges is it supposed to address?
@@ -9,14 +8,13 @@ Note: This presentation consists of two parts:
 
 
 <!-- .slide: data-background="https://farm3.staticflickr.com/2502/3714874171_b3586284df_o_d.jpg" data-background-size="cover" -->
-### So what is
-# Cloud?
+# So what is Cloud?
+
+[Flickr/Daniel Spiess, CC-BY-SA](https://flic.kr/p/6EgGEF) <!-- .element: class="caption" -->
 
 Note: Everybody's talking about Cloud Computing.  But there's no
 general definition of it!  There is no general definition of "the
 Cloud", and the term's used in an inflationary manner.
-
-Source: https://flic.kr/p/6EgGEF
 
 
 # IaaS
@@ -33,19 +31,21 @@ knows what the cloud really has to do with all of this.
 data-background="https://farm1.staticflickr.com/142/388474284_494e936024_o_d.jpg"
 data-background-size="cover" -->
 
+[Flickr/Mark Norman Francis, CC-BY-NC](https://flic.kr/p/Ak2Su) <!-- .element: class="caption" -->
+
+## *"So you want Cloud Computing ..."* <!-- .element: class="fragment" -->
+
 Note: and that tends to leave some of us slightly confused, at times.
+      The interesting question to answer first thus is: What challenge
+      is Cloud Computing supposed to address? And after all, what is
+      it?  To solve this problem, first take a look at the typical
+      relation between an infrastructure service provider, the
+      customer and the technical environment.
 
 
-## *"So you want Cloud Computing ..."*
+<!-- .slide: data-background="https://farm3.staticflickr.com/2775/4381851322_998492c432_o_d.jpg" data-background-size="cover" -->
+[Flickr/Leonardo Rizzi, CC-BY-SA](https://flic.kr/p/7Fd8JJ)  <!-- .element: class="caption" -->
 
-Note: The interesting question to answer first thus is: What challenge
-is Cloud Computing supposed to address? And after all, what is it?  To
-solve this problem, first take a look at the typical relation between
-an infrastructure service provider, the customer and the technical
-environment.
-
-
-<!-- .slide: data-background="images/admin.jpg" data-background-size="cover" -->
 Note: First of all, there's the infrastructure provider.
 
 He wants:
@@ -56,13 +56,17 @@ He wants:
 
 
 <!-- .slide: 
-data-background="images/admin.jpg"
+data-background="https://farm3.staticflickr.com/2775/4381851322_998492c432_o_d.jpg"
 data-background-size="cover" -->
+
 # Automation
 Note: Long story short: The infrastructure provider wants automation!
 
 
-<!-- .slide: data-background="images/customers.jpg" data-background-size="cover" -->
+<!-- .slide: data-background="images/office-1209640_1920.jpg" data-background-size="cover" -->
+
+[Pixabay/Unsplash, CC-0](https://pixabay.com/en/office-two-people-business-team-1209640/)  <!-- .element: class="caption" -->
+
 Note: Then, here we have our customers (typically, these are Hosting
 customers).
 
@@ -72,14 +76,15 @@ They want:
 - to pay as little as possible.
 
 
-<!-- .slide: 
-data-background="images/customers.jpg"
-data-background-size="cover" -->
+<!-- .slide: data-background="images/office-1209640_1920.jpg" data-background-size="cover" -->
 # Automation
 Note: That's possible with Automation, too!
 
 
-<!-- .slide: data-background="images/racks.jpg" data-background-size="cover" -->
+<!-- .slide: data-background="https://farm4.staticflickr.com/3115/2826995939_12540f90a6_o_d.jpg" data-background-size="cover" -->
+
+[Flickr/penguincakes, CC-BY-NC](https://flic.kr/p/5iP6pi)  <!-- .element: class="caption" -->
+
 Note: Now let's take a look at the technical environment involved in
 this. This typically connects service providers and customers. And
 in the conventional data center, it suffers from some design problems:
@@ -96,10 +101,8 @@ For the customers:
 - This leads to high overall cost
 
 
-<!-- .slide: data-background="images/admin-customers.png" data-background-size="contain" -->
-## &uarr;
 # ?
-## &darr;
+
 Note: The interesting question is: How can we modify the technical
 environment to make the service provider and his customers a perfect
 match?
@@ -117,6 +120,9 @@ Note: The first step on the road was virtualization. Typical virtualization setu
 
 
 <!-- .slide: data-background="https://farm5.staticflickr.com/4050/4392789087_03f43e8199_o_d.jpg" data-background-size="cover" -->
+
+[Flickr/Bailey Weaver, CC-BY](https://flic.kr/p/7Gbc9T)  <!-- .element: class="caption" -->
+
 # ~~Automation~~
 Note: Not much automation going on here:
 - *Manually* provision storage
@@ -126,15 +132,11 @@ Note: Not much automation going on here:
 
 No self-service capability at all.
 
-Source: https://flic.kr/p/7Gbc9T
-
-
-<!-- .slide: data-background="images/customers.jpg" data-background-size="cover" -->
-Note: so let's go back to the customers and see what they would really
+So let's go back to the customers and see what they would really
 need.
 
 
-<!-- .slide: data-background="images/button.png" data-background-size="cover" -->
+<!-- .slide: data-background="images/button.png" data-background-size="contain" -->
 Note: a GUI. An easy and intuitive one, too! Whatever they want to do,
 they need an interface that allows them to do it without being a
 rocket-science thing.

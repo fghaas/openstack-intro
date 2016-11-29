@@ -1,3 +1,4 @@
+<!-- .slide: data-background-image="images/openstack-logo.svg" data-background-size="contain" -->
 # Cloud computing with OpenStack
 ## An introduction
 Note: This presentation consists of two parts:
@@ -96,9 +97,9 @@ For the customers:
 
 
 <!-- .slide: data-background="images/admin-customers.png" data-background-size="contain" -->
-# &uarr;
+## &uarr;
 # ?
-# &darr;
+## &darr;
 Note: The interesting question is: How can we modify the technical
 environment to make the service provider and his customers a perfect
 match?

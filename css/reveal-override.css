@@ -34,10 +34,10 @@
   margin: 2%;
 }
 .reveal h1 {
-  font-size: 5em;
+  font-size: 3em;
 }
 .reveal h2 {
-  font-size: 3em;
+  font-size: 2em;
 }
 .reveal h3 {
   font-size: 1.5em;
@@ -91,7 +91,6 @@
   background: inherit !important;
   text-shadow: none;
   text-transform: none;
-  text-shadow: 2px 2px rgba(0,0,0,0.8);
 }
 .reveal blockquote, .reveal q {
   quotes: "“" "”" "‘" "’";
@@ -139,7 +138,7 @@
 .reveal .caption {
   position: absolute;
   right: 0;
-  bottom: 0;
+  top: 45vh;
   font-size: small;
 }
 

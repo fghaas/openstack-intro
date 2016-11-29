@@ -41,11 +41,11 @@
     }
 
     h1 {
-        font-size: 5em;
+        font-size: 3em;
     }
 
     h2 {
-        font-size: 3em;
+        font-size: 2em;
     }
 
     h3 {
@@ -173,7 +173,7 @@
     .caption {
         position: absolute;
 	right: 0;
-	bottom: 0;
+	top: 45vh;
         font-size: small;
     }
 }

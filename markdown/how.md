@@ -19,6 +19,7 @@ data-background="http://upload.wikimedia.org/wikipedia/en/1/16/Rackspace_logo.sv
 [Wikimedia/Rackspace, Fair Use](https://en.wikipedia.org/wiki/File:Rackspace_logo.svg) <!-- .element: class="caption" -->
 
 
+<!-- .slide: data-autoslide="750" -->
 # Austin
 October 2010
 
@@ -26,86 +27,107 @@ October 2010
 Race through these slides quickly.
 
 
+<!-- .slide: data-autoslide="750" -->
 # Bexar
 February 2011
 
 
+<!-- .slide: data-autoslide="750" -->
 # Cactus
 April 2011
 
 
+<!-- .slide: data-autoslide="750" -->
 # Diablo
 September 2011
 
 
+<!-- .slide: data-autoslide="750" -->
 # Essex
 April 2012
 
 
+<!-- .slide: data-autoslide="750" -->
 # Folsom
 September 2012
 
 
+<!-- .slide: data-autoslide="750" -->
 # Grizzly
 April 2013
 
 
+<!-- .slide: data-autoslide="750" -->
 # Havana
 September 2013
 
 
+<!-- .slide: data-autoslide="750" -->
 # Icehouse
 April 2014
 
 
+<!-- .slide: data-autoslide="750" -->
 # Juno
 October 2014
 
 
+<!-- .slide: data-autoslide="750" -->
 # Kilo
 April 2015
 
 
+<!-- .slide: data-autoslide="750" -->
 # Liberty
 October 2015
 
 
+<!-- .slide: data-autoslide="750" -->
 # Mitaka
 April 2016
 
 
+<!-- .slide: data-autoslide="750" -->
 # Newton
 October 2016
 
 
+<!-- .slide: data-autoslide="750" -->
 # Ocata
 February 2017
 
 
+<!-- .slide: data-autoslide="750" -->
 # Pike
 August 2017
 
 
+<!-- .slide: data-autoslide="750" -->
 # Queens
 February 2018
 
 
+<!-- .slide: data-autoslide="750" -->
 # Rocky
 August 2018
 
 
+<!-- .slide: data-autoslide="750" -->
 # Stein
 April 2019
 
 
+<!-- .slide: data-autoslide="750" -->
 # Train
 October 2019
 
 
+<!-- .slide: data-autoslide="750" -->
 # Ussuri
 May 2020
 
 
+<!-- .slide: data-autoslide="750" -->
 # Victoria
 October 2020
 

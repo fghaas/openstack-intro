@@ -13,8 +13,7 @@ data-background-size="contain" -->
 [Wikimedia/NASA GRC, Public Domain](https://commons.wikimedia.org/wiki/File:NASA_logo.svg) <!-- .element: class="caption" -->
 
 
-<!-- .slide: 
-data-background="http://upload.wikimedia.org/wikipedia/en/1/16/Rackspace_logo.svg" data-background-size="contain" -->
+<!-- .slide: data-background="https://upload.wikimedia.org/wikipedia/commons/9/9d/Rackspace_Technology.svg" data-background-size="contain" -->
 
 [Wikimedia/Rackspace, Fair Use](https://en.wikipedia.org/wiki/File:Rackspace_logo.svg) <!-- .element: class="caption" -->
 

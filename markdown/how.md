@@ -1,6 +1,6 @@
 <!-- .slide: data-background="images/openstack-logo.svg" data-background-size="contain" -->
 
-[OpenStack Foundation, Community Use](http://www.openstack.org/brand/openstack-logo/) <!-- .element: class="caption" -->
+[Open Infrastructure Foundation, Community Use](http://www.openstack.org/brand/openstack-logo/) <!-- .element: class="caption" -->
 
 
 # July 2010
@@ -133,13 +133,14 @@ October 2020
 April 2021
 
 
-# > 300
-## Sponsors & supporting companies
+# > 650
+## Sponsors & supporting organizations
 
 <!-- Note -->
-As per <https://www.openstack.org/foundation/companies/>, the
-OpenStack Foundation currently (November 2016) recognizes 381
-companies as Members, Corporate Sponsors, or Supporting Companies.
+As per https://openinfra.dev/companies/, the Open Infrastructure
+Foundation currently (early 2021) recognizes 56 companies as
+foundation members, 5 as infrastructure donors, and 598 as supporting
+organizations.
 
 
 # > 100

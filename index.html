@@ -22,21 +22,6 @@
       document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
     </script>
 
-    <script src="//cdn.localizejs.com/localize.js"></script>
-
-    <script type="text/javascript">
-      // get target language from location string
-      // add ?lang=de to URL for German
-      var langMatch = window.location.search.match('lang=\([a-z]{2}\)');
-      var targetLang = (langMatch) ? langMatch[1] : 'en'
-      Localize.initialize({
-        key: '77OPszIOFcSP2gi8eZbQQFaTFLuNpApa',
-        sourceLanguage: 'en',
-        targetLanguage: targetLang,
-        saveNewPhrases: true,
-        translateBody: true
-      });
-    </script>
   </head>
   <body>
     <div class="reveal">

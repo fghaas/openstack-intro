@@ -22,7 +22,8 @@ data-background="http://upload.wikimedia.org/wikipedia/en/1/16/Rackspace_logo.sv
 # Austin
 October 2010
 
-Note: Race through these slides quickly.
+<!-- Note -->
+Race through these slides quickly.
 
 
 # Bexar
@@ -116,7 +117,8 @@ April 2021
 # > 300
 ## Sponsors & supporting companies
 
-Note: As per <https://www.openstack.org/foundation/companies/>, the
+<!-- Note -->
+As per <https://www.openstack.org/foundation/companies/>, the
 OpenStack Foundation currently (November 2016) recognizes 381
 companies as Members, Corporate Sponsors, or Supporting Companies.
 
@@ -124,7 +126,8 @@ companies as Members, Corporate Sponsors, or Supporting Companies.
 # > 100
 ## Subprojects
 
-Note: 42 “service projects” as of October 2020 per
+<!-- Note -->
+42 “service projects” as of October 2020 per
 https://releases.openstack.org/victoria/, 55 “library projects”, 39
 “other projects”.
 

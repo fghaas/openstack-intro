@@ -14,20 +14,98 @@ This presentation consists of two parts:
 [Flickr/Daniel Spiess, CC-BY-SA](https://flic.kr/p/6EgGEF) <!-- .element: class="caption" -->
 
 <!-- Note -->
-Everybody's talking about Cloud Computing.  But there's no
-general definition of it!  There is no general definition of "the
-Cloud", and the term's used in an inflationary manner.
+So, cloud computing means that instead of running systems on your own
+computers, you run them on someone else's computers. Simple enough,
+eh? It's pretty much like the difference between owning a railroad, and
+buying a train ticket.
+
+Getting from point A to point B by high-speed rail is an excellent
+means of travel, but a high-speed rail link (and its rolling stock)
+requires ridiculous expense to develop, set up, maintain, and operate. It’s
+simply not practical to own a railroad system, or even a train, even a
+train *car* for private use. Instead, what you do is you buy a
+time-slice of the railroad (that’s your train ticket) for your
+journey. When you’ve arrived, you get off, when you need to go back,
+you get back on.
+
+So that's what a cloud computing company does. Runs a large number of
+servers, shoulders all the initial expense and the upkeep and
+maintenance, and then just sells virtual machines — effectively
+*computing time-slices* to customers. And very frequently, that's a
+much, much cheaper way for the individual customer to run
+systems. It's a very basic principle of economics called [economies of
+scale](https://en.wikipedia.org/wiki/Economies_of_scale): as the
+output grows, your cost per unit of output gets lower. Making ten
+thousand bicycles in a highly efficient factory makes it cheaper on
+average than to make one bicyle from raw materials in your garage. If
+your unit of output is an hour of CPU time, that will be cheaper if
+you run ten thousand servers in a data center, rather than ten.
 
 
 # IaaS
-# SaaS
-# PaaS
+
+Infrastructure as a Service
 
 <!-- Note -->
-Maybe you've also heard of these acronyms: Infrastructure as a
-Service, Software as a Service, Platform as a service. When using
-these terms, everybody's somehow thinking of the cloud, but nobody
-knows what the cloud really has to do with all of this.
+Okay, now what’s IaaS or infrastructure as a service? It’s the idea
+that you have access to a whole slew of low-level building blocks
+(“infrastructure)” which, rather than being physically available in a
+datacenter, are available as virtual resources: servers, block
+devices, network interfaces, network switches, routers, firewalls —
+all of those have a virtual equivalent.
+
+And the “as a service” part has a very clearly defined meaning which
+is that all of these resources are not only available through a *user*
+interface (like an admin console or some such), but also though a
+*machine* interface (an **application programming interface** or API)
+so that you can use programs to manipulate your infrastructure.
+
+
+# Elasticity
+
+<!-- Note --> 
+And that’s pretty important because it facilitates **elasticity** of
+services.
+
+Take a real-world example of where that might come in handy: imagine
+any of those silly casting shows on TV, where once a week there’s a
+vote by telephone and SMS, and then you have a service that processes
+all those call-in and text votes. You’re going to not need that
+capacity at all for 167 of the 168 hours in a week, but for that one
+hour you’ll want it to ramp up like mad. And to be clear that’s an
+easy scenario because it’s predictable, time-wise.
+
+But suppose you’re running a niche online game that’s not really
+popular — *until* some gameplay goes viral on Twitch or TikTok or
+whatever, and suddenly and unpredictably your demand skyrockets. Your
+servers breaking down at that moment would be the death knell for your
+business, so you’ll absolutely want to meet that increased demand. The
+only way that you can do that is to have a watchdog service that
+monitors your traffic and then automatically scales as needed.
+
+
+# REST
+
+Representational State Transfer
+
+<!-- Note -->
+And there’s one other thing in the “as a service” bit, which is
+something of a de-facto standard: if something is “as a service”, it
+doesn’t just have any API, it has a REST API. This means that it uses
+HTTP as its standard protocol, and everything that you do in
+infrastructure has an equivalent HTTP API call.
+
+And since HTTP is a pretty rich protocol with a lot of methods, that
+gives us the ability to, for example, send an HTTP `GET` request to
+retrieve information about a resource, send HTTP `PATCH` to modify it,
+and HTTP `DELETE` to remove it.
+
+And of course we get a lot of benefits from not having to reinvent the
+wheel on a lot of things: we know very well how to encrypt HTTP
+(through HTTPS), proxy it, use authentication, cache it, etc. etc.
+
+All of which means that we can make *the service itself* very
+scaleable, as well.
 
 
 <!-- .slide: 

@@ -6,9 +6,7 @@
 # July 2010
 
 
-<!-- .slide: 
-data-background="http://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg"
-data-background-size="contain" -->
+<!-- .slide: data-background="http://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg" data-background-size="contain" -->
    
 [Wikimedia/NASA GRC, Public Domain](https://commons.wikimedia.org/wiki/File:NASA_logo.svg) <!-- .element: class="caption" -->
 

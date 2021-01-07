@@ -1,11 +1,10 @@
 # Cloud computing with OpenStack
 ### An introduction
 <!-- Note -->
-This presentation consists of two parts:
-- First, it deals with the question: What is Cloud Computing? Which
-  challenges is it supposed to address?
-- The second part gives a rough overview over the OpenStack cloud
-  solution -- how does it work?
+I heard you wanted to know what cloud computing is? And what open
+source has got to do with it?
+
+Alright, let’s take a walk, shall we?
 
 
 # So what is Cloud?

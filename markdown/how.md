@@ -77,6 +77,42 @@ April 2016
 October 2016
 
 
+# Ocata
+February 2017
+
+
+# Pike
+August 2017
+
+
+# Queens
+February 2018
+
+
+# Rocky
+August 2018
+
+
+# Stein
+April 2019
+
+
+# Train
+October 2019
+
+
+# Ussuri
+May 2020
+
+
+# Victoria
+October 2020
+
+
+# Wallaby
+April 2021
+
+
 # > 300
 ## Sponsors & supporting companies
 

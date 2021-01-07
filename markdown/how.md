@@ -121,10 +121,12 @@ OpenStack Foundation currently (November 2016) recognizes 381
 companies as Members, Corporate Sponsors, or Supporting Companies.
 
 
-# > 50
+# > 100
 ## Subprojects
 
-Note: 54 projects in the Big Tent (2016) 
+Note: 42 “service projects” as of October 2020 per
+https://releases.openstack.org/victoria/, 55 “library projects”, 39
+“other projects”.
 
 
 <!-- .slide: data-background="images/button.png" data-background-size="cover" -->

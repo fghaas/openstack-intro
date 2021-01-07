@@ -8,10 +8,7 @@ This presentation consists of two parts:
   solution -- how does it work?
 
 
-<!-- .slide: data-background="https://farm3.staticflickr.com/2502/3714874171_b3586284df_o_d.jpg" data-background-size="cover" -->
 # So what is Cloud?
-
-[Flickr/Daniel Spiess, CC-BY-SA](https://flic.kr/p/6EgGEF) <!-- .element: class="caption" -->
 
 <!-- Note -->
 So, cloud computing means that instead of running systems on your own
@@ -108,52 +105,39 @@ All of which means that we can make *the service itself* very
 scaleable, as well.
 
 
-<!-- .slide: 
-data-background="https://farm1.staticflickr.com/142/388474284_494e936024_o_d.jpg"
-data-background-size="cover" -->
-
-[Flickr/Mark Norman Francis, CC-BY-NC](https://flic.kr/p/Ak2Su) <!-- .element: class="caption" -->
-
-## *"So you want Cloud Computing ..."* <!-- .element: class="fragment" -->
+## “So you want Cloud Computing ...”
 
 <!-- Note -->
-and that tends to leave some of us slightly confused, at times.
-      The interesting question to answer first thus is: What challenge
-      is Cloud Computing supposed to address? And after all, what is
-      it?  To solve this problem, first take a look at the typical
-      relation between an infrastructure service provider, the
-      customer and the technical environment.
+So what are our general expectations of cloud computing? To discuss
+that, let’s first take a look at the typical relation between an
+infrastructure service provider, the customer, and the technical
+environment.
 
 
-<!-- .slide: data-background="https://farm3.staticflickr.com/2775/4381851322_998492c432_o_d.jpg" data-background-size="cover" -->
-[Flickr/Leonardo Rizzi, CC-BY-SA](https://flic.kr/p/7Fd8JJ)  <!-- .element: class="caption" -->
+### Infrastructure providers
 
 <!-- Note -->
-First of all, there's the infrastructure provider.
+First of all, there's the infrastructure provider. If we put ourselves
+in their shoes, we want:
 
-He wants:
+- to satisfy his customers with our service -- because they'll remain
+  customers only that way;
+- to optimize our infrastructure, so that running our platform
+  causes us as little extra work as possible;
+- to run our infrastructure as cheaply as possible because that saves
+  us money.
 
-- to satisfy his customers with his service -- because they'll remain customers only that way
-- to optimize his own infrastructure so that running his platform causes him as little extra work as possible
-- to run his infrastructure as cheap as possible because that saves him money.
-
-
-<!-- .slide: 
-data-background="https://farm3.staticflickr.com/2775/4381851322_998492c432_o_d.jpg"
-data-background-size="cover" -->
 
 # Automation
-<!-- Note -->
-Long story short: The infrastructure provider wants automation!
-
-
-<!-- .slide: data-background="images/office-1209640_1920.jpg" data-background-size="cover" -->
-
-[Pixabay/Unsplash, CC-0](https://pixabay.com/en/office-two-people-business-team-1209640/)  <!-- .element: class="caption" -->
 
 <!-- Note -->
-Then, here we have our customers (typically, these are Hosting
-customers).
+Long story short: As an infrastructure provider, we want automation!
+
+
+### Infrastructure customers
+
+<!-- Note -->
+Then, we have our customers.
 
 They want:
 - a perfect service to be offered without any outages
@@ -161,15 +145,12 @@ They want:
 - to pay as little as possible.
 
 
-<!-- .slide: data-background="images/office-1209640_1920.jpg" data-background-size="cover" -->
 # Automation
 <!-- Note -->
 That's possible with Automation, too!
 
 
-<!-- .slide: data-background="https://farm4.staticflickr.com/3115/2826995939_12540f90a6_o_d.jpg" data-background-size="cover" -->
-
-[Flickr/penguincakes, CC-BY-NC](https://flic.kr/p/5iP6pi)  <!-- .element: class="caption" -->
+### Conventional data center infrastructure
 
 <!-- Note -->
 Now let's take a look at the technical environment involved in
@@ -187,16 +168,13 @@ For the customers:
 - Long-running contracts
 - This leads to high overall cost
 
-
-# ?
-
-<!-- Note -->
 The interesting question is: How can we modify the technical
 environment to make the service provider and his customers a perfect
 match?
 
 
-<!-- .slide: data-background="images/servers-storage.svg" data-background-size="contain" -->
+### Virtualization
+
 <!-- Note -->
 The first step on the road was virtualization. Typical virtualization setups look like this:
 - There's centralized storage, in this case, it's a typical SAN
@@ -206,13 +184,8 @@ The first step on the road was virtualization. Typical virtualization setups loo
 
 
 # Automation?
+Meh. <!-- .element class="fragment" -->
 
-
-<!-- .slide: data-background="https://farm5.staticflickr.com/4050/4392789087_03f43e8199_o_d.jpg" data-background-size="cover" -->
-
-[Flickr/Bailey Weaver, CC-BY](https://flic.kr/p/7Gbc9T)  <!-- .element: class="caption" -->
-
-# ~~Automation~~
 <!-- Note -->
 Not much automation going on here:
 - *Manually* provision storage
@@ -226,41 +199,69 @@ So let's go back to the customers and see what they would really
 need.
 
 
-<!-- .slide: data-background="images/button.png" data-background-size="contain" -->
+# GUI
 <!-- Note -->
-a GUI. An easy and intuitive one, too! Whatever they want to do,
-they need an interface that allows them to do it without being a
-rocket-science thing.
+So, I might want a GUI. An easy and intuitive one, too! Whatever I
+want to spin up or reconfigure in the cloud, I’ll need an interface
+that allows me to do that without being rocket science.
 
+
+# CLI/API
+<!-- Note -->
 In addition to a GUI, we also want CLIs and client libraries so using
 the cloud from a script or application is as easy as manipulating it
 from a graphical interface.
 
 
-<!-- .slide: data-background="images/fingerprint.png" data-background-size="contain" -->
+# AuthN/AuthZ
 <!-- Note -->
-Authentication, authorization, and access control. The service
-provider also has to provide a framework for access
-restrictions. Different people in a company are allowed to do
-different things, and the setup has to resemble this.
+Authentication and authorization, and also access control. The service
+provider has to provide a framework for access restrictions. Different
+people are allowed to do different things, and the setup has to
+resemble this.
 
 
-<!-- .slide: data-background="images/soda-machine.png" data-background-size="contain" -->
+# Multi-tenancy
 <!-- Note -->
-The service provider also has to provide prepared images
-containing an operating system, preferably as simple as getting soda
-from a soda machine.
+Closely related is the concept of multi-tenancy, which is the ability
+to *logically* segment and compartmentalize a *physical* infrastructure
+that is inherently shared. If I run a virtual server on the same
+physical hardware as you, I want my server to be as inaccessible to
+you by default as if they were in a different country.
 
 
-<!-- .slide: data-background="images/switch.png" data-background-size="contain" -->
+# Images
 <!-- Note -->
-A solution must exist to integrate new VMs automatically into
-the eventually existing network infrastructure. This includes VLAN
+The service provider also has to provide prepared images containing an
+operating system, preferably as simple as getting some coffee out of
+an automatic coffee machine. I don’t want to have to worry about the
+intricate details of what parts need to move and what liquids need to
+flow to produce my ristretto, I just want one to come out when I push
+a button. Likewise I don’t want to have to deal with the basic
+installation of, say, an Ubuntu server. I just want to send a request
+to spin on up from a master image, and then log into it in a matter of
+seconds.
+
+
+# Networking
+<!-- Note -->
+A solution must exist to integrate new VMs automatically into the
+eventually existing network infrastructure. This includes VLAN
 integration, this also included assigning freshly created VMs a new IP
 address automatically.
 
 
-<!-- .slide: data-background="images/brain.svg" data-background-size="contain" -->
+# Storage
 <!-- Note -->
-And last but not least, we need a central controlling instance
-to keep all the things I mentioned earlier together.
+I also need the ability to manage persistent storage, both block
+storage and object storage.
+
+
+# Servers
+<!-- Note -->
+Of course, I want the ability to run virtual machines.
+
+
+# Containers
+<!-- Note -->
+And if VMs are not my thing, I might want to orchestrate containers instead.

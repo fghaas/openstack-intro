@@ -152,59 +152,26 @@ https://releases.openstack.org/victoria/, 55 “library projects”, 39
 “other projects”.
 
 
-<!-- .slide: data-background="images/button.png" data-background-size="cover" -->
-# Horizon
+<!-- .slide: data-background="images/keystone.svg" data-background-size="contain" data-autoslide="1500" -->
+<!-- Note -->
+Multi-tenancy & Authentication
 
 
-<!-- .slide: data-background="images/fingerprint.png" data-background-size="contain" -->
-# Keystone
+<!-- .slide: data-background="images/glance.svg" data-background-size="contain" data-autoslide="1500" -->
+<!-- Note -->
+Image management
 
 
-<!-- .slide: data-background="images/soda-machine.png" data-background-size="contain" -->
-# Glance
+<!-- .slide: data-background="images/neutron.svg" data-background-size="contain" data-autoslide="1500" -->
+<!-- Note -->
+Networking
 
 
-<!-- .slide: data-background="images/switch.png" data-background-size="contain" -->
-# Neutron
+<!-- .slide: data-background="images/nova.svg" data-background-size="contain" data-autoslide="1500" -->
+<!-- Note -->
+Server (VM) management
 
 
-<!-- .slide: data-background="images/brain.svg" data-background-size="contain" -->
-# Nova
-
-
-# Automation?
-
-
-<!-- .slide: data-background="images/flow-1.svg" data-background-size="contain" -->
-
-
-<!-- .slide: data-background="images/flow-2.svg" data-background-size="contain" -->
-
-
-<!-- .slide: data-background="images/flow-3.svg" data-background-size="contain" -->
-
-
-<!-- .slide: data-background="images/flow-4.svg" data-background-size="contain" -->
-
-
-<!-- .slide: data-background="images/flow-5.svg" data-background-size="contain" -->
-
-
-<!-- .slide: data-background="images/flow-6.svg" data-background-size="contain" -->
-
-
-<!-- .slide: data-background="images/flow-7.svg" data-background-size="contain" -->
-
-
-<!-- .slide: data-background="images/flow-8.svg" data-background-size="contain" -->
-
-
-<!-- .slide: data-background="images/flow-9.svg" data-background-size="contain" -->
-
-
-<!-- .slide: data-background="https://farm4.staticflickr.com/3113/3117146807_2a56fa5543_o_d.jpg" data-background-size="cover" -->
-# Automation!
-
-[Aidan Jones, CC-BY-SA](https://flic.kr/p/5Ksc9t) <!-- .element: class="caption" -->
-
-Note:
+<!-- .slide: data-background="images/magnum.svg" data-background-size="contain" data-autoslide="1500" -->
+<!-- Note -->
+Container orchestration

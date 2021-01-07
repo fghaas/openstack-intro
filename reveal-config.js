@@ -10,6 +10,7 @@ Reveal.initialize({
     showNotes: false,
 
     transition: 'none',
+    backgroundTransition: 'none',
 
     menu: {
         themes: false,

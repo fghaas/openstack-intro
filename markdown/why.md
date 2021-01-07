@@ -41,13 +41,14 @@ you into ridiculous liabilities and dependencies on a single vendor.
 ## But the others don’t either!
 
 <!-- Note --> 
-Amazon, Google, Microsoft don’t open-source their cloud
-platform, but they all operate like open source communities! Literally
+Amazon, Google, Microsoft don’t open-source their cloud platform, but
+they all operate very much like open source communities! Practically
 everything in software development that has significantly changed the
-industry comes out of open source. Distributed collaborative software
-development was made possible on a massive scale because of Git, which
-came directly out of the development scaling needs of the Linux
-kernel.
+industry in the last 15 years came out of open source.
+
+Distributed collaborative software development was made possible on a
+massive scale because of Git, which came directly out of the
+development scaling needs of the Linux kernel.
 
 The concept of gated development — the fact that no change must ever
 break code, regardless of whether it’s part of a release or not, that

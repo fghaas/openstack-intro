@@ -27,7 +27,7 @@ you get back on.
 So that's what a cloud computing company does. Runs a large number of
 servers, shoulders all the initial expense and the upkeep and
 maintenance, and then just sells virtual machines — effectively
-*computing time-slices* to customers. And very frequently, that's a
+*computer time-slices* — to customers. And very frequently, that's a
 much, much cheaper way for the individual customer to run
 systems. It's a very basic principle of economics called [economies of
 scale](https://en.wikipedia.org/wiki/Economies_of_scale): as the

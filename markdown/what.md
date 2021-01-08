@@ -56,28 +56,43 @@ interface (like an admin console or some such), but also though a
 *machine* interface (an **application programming interface** or API)
 so that you can use programs to manipulate your infrastructure.
 
+And that’s pretty important because it facilitates the **scalability**
+and **elasticity** of services.
+
+
+# Scalability
+
+<!-- Note --> 
+Now what does scalability mean?
+
+Take a real-world example of where scalability is extremely useful:
+imagine any of those silly casting shows on TV, where once a week
+there’s a vote by telephone and SMS, and then you have a service that
+processes all those call-in and text votes. You’re going to not need
+that capacity at all for 167 of the 168 hours in a week, but for that
+one hour you’ll want it to ramp up like mad. You want that to be easy,
+so that’s where you need an API.
+
+But, to be clear, that’s a comparatively easy scenario because it’s
+predictable, time-wise.
+
 
 # Elasticity
 
-<!-- Note --> 
-And that’s pretty important because it facilitates **elasticity** of
-services.
-
-Take a real-world example of where that might come in handy: imagine
-any of those silly casting shows on TV, where once a week there’s a
-vote by telephone and SMS, and then you have a service that processes
-all those call-in and text votes. You’re going to not need that
-capacity at all for 167 of the 168 hours in a week, but for that one
-hour you’ll want it to ramp up like mad. And to be clear that’s an
-easy scenario because it’s predictable, time-wise.
-
+<!-- Note -->
 But suppose you’re running a niche online game that’s not really
 popular — *until* some gameplay goes viral on Twitch or TikTok or
 whatever, and suddenly and unpredictably your demand skyrockets. Your
 servers breaking down at that moment would be the death knell for your
 business, so you’ll absolutely want to meet that increased demand. The
 only way that you can do that is to have a watchdog service that
-monitors your traffic and then automatically scales as needed.
+monitors your traffic and then automatically scales as needed. And
+once your traffic subsides, you also want to scale back down just as
+quickly.
+
+That’s what elasticity is, and here’s where having an API is
+absolutely vital, because there’s absolutely no practical way that
+humans sitting on admin consoles could pull this off.
 
 
 # REST

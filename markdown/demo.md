@@ -1,6 +1,7 @@
 <!-- .slide: 
 data-background="images/ssh.svg" data-background-size="contain" -->
-Note: 
+<!-- Note -->
+
 
 
 <iframe src="http://localhost:4242"></iframe>

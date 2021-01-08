@@ -22,42 +22,33 @@
       document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
     </script>
 
-    <script src="//cdn.localizejs.com/localize.js"></script>
-
-    <script type="text/javascript">
-      // get target language from location string
-      // add ?lang=de to URL for German
-      var langMatch = window.location.search.match('lang=\([a-z]{2}\)');
-      var targetLang = (langMatch) ? langMatch[1] : 'en'
-      Localize.initialize({
-        key: '77OPszIOFcSP2gi8eZbQQFaTFLuNpApa',
-        sourceLanguage: 'en',
-        targetLanguage: targetLang,
-        saveNewPhrases: true,
-        translateBody: true
-      });
-    </script>
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
-	<section id="why"
-		 data-markdown="markdown/why.md"
+	<section id="what"
+		 data-markdown="markdown/what.md"
 		 data-separator="^\n\n\n"
 		 data-separator-vertical="^\n\n"
-		 data-separator-notes="^Note:" >
+		 data-separator-notes="<!-- Note -->" >
 	</section>
 	<section id="how"
 		 data-markdown="markdown/how.md"
 		 data-separator="^\n\n\n"
 		 data-separator-vertical="^\n\n"
-		 data-separator-notes="^Note:" >
+		 data-separator-notes="<!-- Note -->" >
+	</section>
+	<section id="why"
+		 data-markdown="markdown/why.md"
+		 data-separator="^\n\n\n"
+		 data-separator-vertical="^\n\n"
+		 data-separator-notes="<!-- Note -->" >
 	</section>
 	<section id="conclusion"
 		 data-markdown="markdown/conclusion.md"
 		 data-separator="^\n\n\n"
 		 data-separator-vertical="^\n\n"
-		 data-separator-notes="^Note:" >
+		 data-separator-notes="<!-- Note -->" >
 	</section>
       </div>
     </div>
@@ -93,56 +84,10 @@ for (var i = 0; i < n; i++) {
     <script src="reveal.js/lib/js/head.min.js"></script>
     <script src="reveal.js/js/reveal.js"></script>
 
-    <script>
-// Full list of configuration options available here:
-// https://github.com/hakimel/reveal.js#configuration
-Reveal.initialize({
-    controls: false,
-    progress: false,
-    history: true,
-    center: true,
+    <script src="reveal-config.js"></script>
 
-    // Parallax background image
-    // parallaxBackgroundImage: 'images/background.jpg',
+    <script src="qrcodejs/qrcode.js"></script>
+    <script src="qrcode-replace.js"></script>
 
-    // Parallax background size
-    // parallaxBackgroundSize: '2100px 900px', // CSS syntax, e.g. "2100px 900px"
-
-    theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-    transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
-
-    menu: {
-        themes: false,
-        transitions: false,
-        openButton: false,
-        openSlideNumber: true,
-        markers: true
-    },
-
-    keyboard: {
-         40: 'next',
-         38: 'prev'
-    },
-
-    multiplex: {
-        secret: null,
-        id: 'insert-id-here',
-        url: 'https://reveal-js-multiplex-ccjbegmaii.now.sh'
-    },
-
-    // Optional libraries used to extend on reveal.js
-    dependencies: [
-        { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-        { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-        { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-        { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-        { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-        { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
-        { src: 'reveal.js/plugin/multiplex/master.js', async: true },
-        { src: 'reveal.js-menu/menu.js', async: true, condition: function() { return !!document.body.classList; } },
-        { src: '//cdn.socket.io/socket.io-1.3.5.js', async: true },
-    ]
-});
-    </script>
   </body>
 </html>

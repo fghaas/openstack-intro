@@ -118,104 +118,12 @@ wheel on a lot of things: we know very well how to encrypt HTTP
 All of which means that we can make *the service itself* very
 scaleable, as well.
 
-
-## “So you want Cloud Computing ...”
-
-<!-- Note -->
-So what are our general expectations of cloud computing? To discuss
-that, let’s first take a look at the typical relation between an
-infrastructure service provider, the customer, and the technical
-environment.
-
-
-### Infrastructure providers
-
-<!-- Note -->
-First of all, there's the infrastructure provider. If we put ourselves
-in their shoes, we want:
-
-- to satisfy his customers with our service -- because they'll remain
-  customers only that way;
-- to optimize our infrastructure, so that running our platform
-  causes us as little extra work as possible;
-- to run our infrastructure as cheaply as possible because that saves
-  us money.
-
-
-# Automation
-
-<!-- Note -->
-Long story short: As an infrastructure provider, we want automation!
-
-
-### Infrastructure customers
-
-<!-- Note -->
-Then, we have our customers.
-
-They want:
-- a perfect service to be offered without any outages
-- to be as flexible as possible (without long-running contracts)
-- to pay as little as possible.
-
-
-# Automation
-<!-- Note -->
-That's possible with Automation, too!
-
-
-### Conventional data center infrastructure
-
-<!-- Note -->
-Now let's take a look at the technical environment involved in
-this. This typically connects service providers and customers. And
-in the conventional data center, it suffers from some design problems:
-
-For the infrastructure provider: 
-- Lots of iron in his DC
-- High cost for acquiring and maintaining hardware
-- High power consumption
-- Low utilization, little efficiency
-
-For the customers: 
-- Complicated, non-automatic setup process
-- Long-running contracts
-- This leads to high overall cost
-
-The interesting question is: How can we modify the technical
-environment to make the service provider and his customers a perfect
-match?
-
-
-### Virtualization
-
-<!-- Note -->
-The first step on the road was virtualization. Typical virtualization setups look like this:
-- There's centralized storage, in this case, it's a typical SAN
-- We also have a bunch of virtualization nodes, accessing that storage
-- These might be cluster controlled for HA purposes
-- They start virtual machines via a hypervisor
-
-
-# Automation?
-Meh. <!-- .element class="fragment" -->
-
-<!-- Note -->
-Not much automation going on here:
-- *Manually* provision storage
-- *Manually* provision network resources
-- *Manually* install an OS
-- *Manually* add it to the management infrastructure
-
-No self-service capability at all.
-
-So let's go back to the customers and see what they would really
-need.
+So let's see what we would expect out of such a service.
 
 
 # GUI
 <!-- Note -->
-So, I might want a GUI. An easy and intuitive one, too! Whatever I
+I might want a GUI. An easy and intuitive one, too! Whatever I
 want to spin up or reconfigure in the cloud, I’ll need an interface
 that allows me to do that without being rocket science.
 
